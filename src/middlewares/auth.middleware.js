@@ -7,6 +7,7 @@ try {
         const token = req.cookies?.accessToken || req.header
         ("Authorization")?.replace("Bearer", "")
         //throw error if token is not present
+        console.log("token:", token);
         if (!token) {
             throw new ApiError("You are not authenticated");
         }

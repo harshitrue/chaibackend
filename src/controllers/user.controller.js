@@ -111,7 +111,7 @@ const loginUser = asyncHandler(async (req, res) => {
     //return user details without password and refresh token
     const {email, username, password} = req.body;
 
-    if(!email || !username) {
+    if(!email && !username) {
         throw new ApiError(400, "Please provide email or username")
     }
 
